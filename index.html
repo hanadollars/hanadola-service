@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hanadola Media & Technology — Giải Pháp Số Toàn Diện</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0B1622;
+  --navy-2: #0F1D2E;
+  --navy-3: #162436;
+  --navy-4: #1C2E42;
+  --blue: #3A7BD5;
+  --blue-light: #6BA3E0;
+  --blue-glow: rgba(58,123,213,0.12);
+  --teal: #2ABFBF;
+  --gold: #C9A84C;
+  --gold-light: #E8C97A;
+  --border: rgba(255,255,255,0.07);
+  --border-blue: rgba(58,123,213,0.25);
+  --border-gold: rgba(201,168,76,0.25);
+  --text: #E4EAF0;
+  --text-2: #8FAABB;
+  --text-3: #4A6478;
+  --green: #3DBE7A;
+  --green-bg: rgba(61,190,122,0.1);
+  --coral: #E8634A;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--navy);
+  color:var(--text);
+  font-family:'Be Vietnam Pro',sans-serif;
+  font-weight:300;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+/* ── NODE BG ── */
+#bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.25;}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(11,22,34,0.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  padding:0 60px;
+  display:flex;align-items:center;justify-content:space-between;
+  height:64px;
+}
+.nav-logo{font-size:16px;font-weight:600;color:var(--text);letter-spacing:.03em;}
+.nav-logo span{color:var(--blue-light);}
+.nav-links{display:flex;gap:28px;align-items:center;}
+.nav-links a{font-size:13px;color:var(--text-2);text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--text);}
+.nav-cta{
+  background:var(--blue);color:white;
+  font-size:12.5px;font-weight:600;
+  padding:9px 20px;border-radius:6px;
+  text-decoration:none;cursor:pointer;
+  transition:background .2s;border:none;
+  font-family:'Be Vietnam Pro',sans-serif;
+}
+.nav-cta:hover{background:var(--blue-light);color:white;}
+
+/* ── HERO ── */
+.hero{
+  position:relative;z-index:1;
+  text-align:center;
+  padding:100px 40px 80px;
+  max-width:800px;margin:0 auto;
+}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--blue-light);border:1px solid var(--border-blue);
+  padding:6px 16px;border-radius:20px;margin-bottom:28px;
+}
+.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--blue);box-shadow:0 0 8px var(--blue);animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:58px;font-weight:700;line-height:1.15;
+  margin-bottom:20px;
+}
+.hero h1 em{font-style:italic;color:var(--blue-light);}
+.hero-sub{font-size:17px;color:var(--text-2);max-width:560px;margin:0 auto 40px;line-height:1.8;}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn-primary{
+  background:var(--blue);color:white;
+  font-family:'Be Vietnam Pro',sans-serif;
+  font-size:14px;font-weight:600;
+  padding:14px 32px;border-radius:8px;
+  text-decoration:none;transition:all .2s;
+  border:none;cursor:pointer;
+}
+.btn-primary:hover{background:var(--blue-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(58,123,213,0.35);}
+.btn-outline{
+  background:transparent;color:var(--text);
+  font-family:'Be Vietnam Pro',sans-serif;
+  font-size:14px;font-weight:500;
+  padding:14px 32px;border-radius:8px;
+  border:1px solid var(--border);
+  text-decoration:none;transition:all .2s;cursor:pointer;
+}
+.btn-outline:hover{border-color:var(--border-blue);color:var(--blue-light);}
+
+/* ── STATS ── */
+.stats{
+  position:relative;z-index:1;
+  display:grid;grid-template-columns:repeat(4,1fr);
+  max-width:900px;margin:0 auto;
+  border:1px solid var(--border);border-radius:16px;
+  overflow:hidden;background:var(--navy-2);
+}
+.stat{padding:28px 24px;text-align:center;border-right:1px solid var(--border);}
+.stat:last-child{border-right:none;}
+.stat-num{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--blue-light);line-height:1;}
+.stat-label{font-size:12px;color:var(--text-3);margin-top:6px;}
+
+/* ── SECTION WRAPPER ── */
+.section{position:relative;z-index:1;padding:80px 60px;max-width:1200px;margin:0 auto;}
+.section-header{text-align:center;margin-bottom:56px;}
+.section-tag{
+  display:inline-block;font-size:11px;letter-spacing:.2em;
+  text-transform:uppercase;padding:5px 14px;border-radius:3px;
+  margin-bottom:14px;font-weight:500;
+}
+.tag-personal{color:var(--gold-light);background:rgba(201,168,76,.1);border:1px solid var(--border-gold);}
+.tag-business{color:var(--teal);background:rgba(42,191,191,.08);border:1px solid rgba(42,191,191,.2);}
+.section-title{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;margin-bottom:12px;}
+.section-desc{font-size:15px;color:var(--text-2);max-width:560px;margin:0 auto;}
+
+/* ── DIVIDER ── */
+.divider{
+  position:relative;z-index:1;
+  height:1px;background:var(--border);
+  max-width:1200px;margin:0 auto;
+}
+
+/* ── PERSONAL CARDS ── */
+.personal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+
+.p-card{
+  background:var(--navy-2);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:28px 24px;
+  transition:border-color .25s,transform .25s;
+  position:relative;overflow:hidden;
+}
+.p-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  opacity:0;transition:opacity .3s;
+}
+.p-card:hover{border-color:var(--border-gold);transform:translateY(-4px);}
+.p-card:hover::before{opacity:1;}
+.p-card.featured{border-color:var(--border-gold);background:linear-gradient(160deg,rgba(201,168,76,.05) 0%,var(--navy-2) 50%);}
+.p-card.featured::before{opacity:1;}
+
+.p-card-badge{
+  position:absolute;top:16px;right:16px;
+  font-size:10px;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;padding:3px 9px;border-radius:3px;
+}
+.badge-hot{background:var(--coral);color:white;}
+.badge-new{background:var(--green);color:white;}
+.badge-popular{background:var(--blue);color:white;}
+
+.p-icon{font-size:28px;margin-bottom:14px;display:block;}
+.p-name{font-family:'Playfair Display',serif;font-size:19px;font-weight:600;margin-bottom:8px;color:var(--text);}
+.p-desc{font-size:13px;color:var(--text-2);line-height:1.75;margin-bottom:16px;}
+
+.p-items{list-style:none;margin-bottom:20px;}
+.p-items li{
+  font-size:12.5px;color:var(--text-2);
+  padding:6px 0;border-top:1px solid var(--border);
+  display:flex;align-items:flex-start;gap:8px;line-height:1.5;
+}
+.p-items li::before{content:'→';color:var(--gold);flex-shrink:0;}
+
+.p-price{
+  font-size:18px;font-weight:700;color:var(--gold-light);
+  padding-top:16px;border-top:1px solid var(--border);
+}
+.p-price-note{font-size:11px;color:var(--text-3);font-weight:300;margin-top:3px;}
+
+/* PHOTO PACKAGES */
+.photo-packages{
+  grid-column:1/-1;
+  background:var(--navy-2);border:1px solid var(--border-gold);
+  border-radius:14px;padding:28px 28px 24px;
+  background:linear-gradient(160deg,rgba(201,168,76,.04) 0%,var(--navy-2) 60%);
+}
+.photo-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:600;margin-bottom:6px;}
+.photo-desc{font-size:13px;color:var(--text-2);margin-bottom:24px;}
+.photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px;}
+.pkg-box{
+  background:var(--navy-3);border:1px solid var(--border);
+  border-radius:10px;padding:20px 18px;transition:border-color .2s;
+}
+.pkg-box:hover{border-color:var(--border-gold);}
+.pkg-box.best{border-color:var(--gold);background:linear-gradient(160deg,rgba(201,168,76,.08),var(--navy-3));}
+.pkg-tier{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--text-3);margin-bottom:4px;}
+.pkg-box.best .pkg-tier{color:var(--gold);}
+.pkg-count{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:2px;}
+.pkg-style{font-size:12px;color:var(--text-2);margin-bottom:12px;}
+.pkg-price-val{font-size:20px;font-weight:700;color:var(--gold-light);}
+.pkg-delivery{font-size:11px;color:var(--text-3);margin-bottom:12px;}
+.pkg-feats{list-style:none;}
+.pkg-feats li{font-size:11.5px;color:var(--text-2);padding:4px 0;display:flex;gap:6px;}
+.pkg-feats li::before{content:'✓';color:var(--gold);font-size:10px;margin-top:2px;flex-shrink:0;}
+.styles-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+.style-chip{
+  font-size:11.5px;background:var(--navy-3);
+  border:1px solid var(--border);color:var(--text-2);
+  padding:5px 12px;border-radius:20px;
+}
+
+/* ── BUSINESS SECTION ── */
+.business-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+
+.b-card{
+  background:var(--navy-2);border:1px solid var(--border);
+  border-radius:14px;padding:30px 28px;
+  transition:border-color .25s,transform .25s;
+  position:relative;overflow:hidden;
+}
+.b-card::before{
+  content:'';position:absolute;top:0;left:0;width:3px;height:100%;
+  background:var(--teal);opacity:0;transition:opacity .3s;
+}
+.b-card:hover{border-color:rgba(42,191,191,.3);transform:translateY(-3px);}
+.b-card:hover::before{opacity:1;}
+
+.b-num{font-size:11px;letter-spacing:.15em;color:var(--text-3);margin-bottom:12px;}
+.b-icon{font-size:26px;margin-bottom:12px;display:block;}
+.b-name{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;margin-bottom:8px;}
+.b-desc{font-size:13px;color:var(--text-2);line-height:1.75;margin-bottom:16px;}
+.b-includes{list-style:none;margin-bottom:20px;}
+.b-includes li{
+  font-size:12.5px;color:var(--text-2);
+  padding:7px 0;border-top:1px solid var(--border);
+  display:flex;gap:8px;line-height:1.5;
+}
+.b-includes li::before{content:'—';color:var(--teal);flex-shrink:0;}
+.b-price{
+  font-size:15px;font-weight:600;color:var(--text);
+  padding-top:16px;border-top:1px solid var(--border);
+}
+.b-price-note{font-size:11px;color:var(--text-3);font-weight:300;margin-top:3px;}
+
+/* PACKAGES ROW */
+.b-packages-row{
+  grid-column:1/-1;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+}
+.b-pkg{
+  background:var(--navy-2);border:1px solid var(--border);
+  border-radius:14px;padding:26px 22px;
+  transition:border-color .25s;
+}
+.b-pkg:hover{border-color:rgba(42,191,191,.3);}
+.b-pkg.best{
+  border-color:var(--teal);
+  background:linear-gradient(160deg,rgba(42,191,191,.05) 0%,var(--navy-2) 60%);
+}
+.b-pkg-tier{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-3);margin-bottom:5px;}
+.b-pkg.best .b-pkg-tier{color:var(--teal);}
+.b-pkg-name{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:4px;}
+.b-pkg-target{font-size:12px;color:var(--text-2);margin-bottom:18px;line-height:1.6;}
+.b-pkg-price{font-size:26px;font-weight:700;color:var(--teal);margin-bottom:2px;}
+.b-pkg-period{font-size:11px;color:var(--text-3);margin-bottom:18px;}
+.b-pkg-list{list-style:none;}
+.b-pkg-list li{font-size:12.5px;color:var(--text-2);padding:7px 0;border-top:1px solid var(--border);display:flex;gap:8px;line-height:1.5;}
+.b-pkg-list li::before{content:'✓';color:var(--teal);font-size:11px;flex-shrink:0;margin-top:2px;}
+
+/* ── AI POWER BANNER ── */
+.ai-banner{
+  position:relative;z-index:1;
+  max-width:1200px;margin:0 auto;padding:0 60px;
+}
+.ai-banner-inner{
+  background:linear-gradient(135deg,var(--navy-3) 0%,rgba(58,123,213,.12) 100%);
+  border:1px solid var(--border-blue);border-radius:20px;
+  padding:48px 52px;
+  display:grid;grid-template-columns:1fr auto;
+  gap:40px;align-items:center;
+}
+.ai-title{font-family:'Playfair Display',serif;font-size:30px;font-weight:700;margin-bottom:10px;}
+.ai-title em{font-style:italic;color:var(--blue-light);}
+.ai-desc{font-size:14px;color:var(--text-2);line-height:1.8;max-width:540px;}
+.ai-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;}
+.ai-tag{
+  font-size:12px;background:var(--blue-glow);
+  border:1px solid var(--border-blue);color:var(--blue-light);
+  padding:5px 13px;border-radius:20px;
+}
+.ai-cta-block{text-align:center;flex-shrink:0;}
+.ai-cta-zalo{
+  background:#0068FF;color:white;
+  font-family:'Be Vietnam Pro',sans-serif;
+  font-size:14px;font-weight:600;
+  padding:14px 28px;border-radius:8px;
+  text-decoration:none;display:block;margin-bottom:8px;
+  transition:opacity .2s;
+}
+.ai-cta-zalo:hover{opacity:.88;}
+.ai-zalo-num{font-size:20px;font-weight:700;color:var(--text);margin-top:10px;}
+.ai-zalo-note{font-size:11px;color:var(--text-3);}
+
+/* ── WHY ── */
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:16px;overflow:hidden;}
+.why-item{background:var(--navy-2);padding:30px 24px;}
+.why-num{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;color:var(--blue-light);line-height:1;margin-bottom:8px;}
+.why-label{font-size:14px;font-weight:500;margin-bottom:6px;}
+.why-desc{font-size:12.5px;color:var(--text-2);line-height:1.65;}
+
+/* ── PROCESS ── */
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
+.process-steps::before{
+  content:'';position:absolute;top:28px;left:10%;right:10%;height:1px;
+  background:linear-gradient(90deg,var(--border-blue),var(--border-blue));
+  z-index:0;
+}
+.step{position:relative;z-index:1;text-align:center;padding:0 16px;}
+.step-circle{
+  width:56px;height:56px;border-radius:50%;
+  background:var(--navy-3);border:1px solid var(--border-blue);
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;margin:0 auto 16px;
+}
+.step-num-label{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--blue-light);margin-bottom:6px;}
+.step-title{font-size:14px;font-weight:500;margin-bottom:6px;}
+.step-desc{font-size:12px;color:var(--text-3);line-height:1.6;}
+
+/* ── FINAL CTA ── */
+.final-cta{
+  position:relative;z-index:1;
+  text-align:center;padding:80px 40px;
+  max-width:700px;margin:0 auto;
+}
+.final-cta h2{font-family:'Playfair Display',serif;font-size:40px;font-weight:700;margin-bottom:14px;}
+.final-cta h2 em{font-style:italic;color:var(--gold-light);}
+.final-cta p{font-size:15px;color:var(--text-2);margin-bottom:36px;line-height:1.8;}
+.final-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+/* ── FOOTER ── */
+footer{
+  position:relative;z-index:1;
+  border-top:1px solid var(--border);
+  padding:32px 60px;
+  display:flex;justify-content:space-between;align-items:center;
+  gap:20px;font-size:12px;color:var(--text-3);
+}
+footer a{color:var(--text-3);text-decoration:none;}
+
+/* ══════════════════════════════════════
+   MODAL TƯ VẤN
+══════════════════════════════════════ */
+.modal-overlay{
+  display:none;
+  position:fixed;inset:0;
+  background:rgba(5,12,22,0.85);
+  backdrop-filter:blur(6px);
+  z-index:500;
+  align-items:center;justify-content:center;
+  padding:20px;
+}
+.modal-overlay.open{display:flex;}
+
+.modal-box{
+  background:var(--navy-2);
+  border:1px solid var(--border-blue);
+  border-radius:18px;
+  padding:36px 32px;
+  width:100%;max-width:480px;
+  max-height:90vh;overflow-y:auto;
+  box-shadow:0 32px 80px rgba(0,0,0,0.6);
+  animation:mSlide .35s ease both;
+  position:relative;
+}
+@keyframes mSlide{
+  from{opacity:0;transform:translateY(28px);}
+  to{opacity:1;transform:translateY(0);}
+}
+.modal-close{
+  position:absolute;top:16px;right:18px;
+  background:none;border:none;color:var(--text-3);
+  font-size:20px;cursor:pointer;line-height:1;
+  transition:color .2s;
+}
+.modal-close:hover{color:var(--text);}
+.modal-title{
+  font-family:'Playfair Display',serif;
+  font-size:22px;font-weight:600;
+  margin-bottom:6px;color:var(--text);
+  padding-right:24px;
+}
+.modal-sub{
+  font-size:13px;color:var(--text-3);
+  margin-bottom:24px;padding-bottom:18px;
+  border-bottom:1px solid var(--border);
+}
+
+/* Modal form fields */
+.mfield{margin-bottom:16px;}
+.mfield label{
+  display:block;font-size:12px;font-weight:500;
+  color:var(--text-2);margin-bottom:6px;letter-spacing:.03em;
+}
+.mfield label .req{color:var(--blue-light);margin-left:2px;}
+.mfield label .opt{color:var(--text-3);font-weight:300;font-size:11px;margin-left:4px;}
+.mfield input,.mfield textarea,.mfield select{
+  width:100%;
+  background:var(--navy-3);
+  border:1px solid var(--border);
+  border-radius:8px;
+  color:var(--text);
+  font-family:'Be Vietnam Pro',sans-serif;
+  font-size:14px;font-weight:300;
+  padding:11px 14px;outline:none;
+  transition:border-color .2s,box-shadow .2s;
+  -webkit-appearance:none;
+}
+.mfield input::placeholder,.mfield textarea::placeholder{color:var(--text-3);}
+.mfield input:focus,.mfield textarea:focus{
+  border-color:var(--blue);
+  box-shadow:0 0 0 3px rgba(58,123,213,0.12);
+}
+.mfield textarea{resize:none;height:80px;line-height:1.6;}
+.mfield-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+
+/* Service chips */
+.mchips{display:flex;flex-wrap:wrap;gap:7px;}
+.mchip{
+  font-size:11.5px;color:var(--text-2);
+  background:var(--navy-3);
+  border:1px solid var(--border);
+  padding:5px 11px;border-radius:20px;
+  cursor:pointer;transition:all .18s;user-select:none;
+}
+.mchip:hover{border-color:var(--border-blue);color:var(--blue-light);}
+.mchip.active{
+  background:var(--blue-glow);
+  border-color:var(--blue);
+  color:var(--blue-light);
+}
+
+/* Modal submit */
+.modal-submit{
+  width:100%;background:var(--blue);color:white;
+  font-family:'Be Vietnam Pro',sans-serif;
+  font-size:14px;font-weight:600;letter-spacing:.05em;
+  padding:14px;border:none;border-radius:8px;
+  cursor:pointer;margin-top:20px;
+  transition:background .2s,transform .15s,box-shadow .2s;
+}
+.modal-submit:hover:not(:disabled){
+  background:var(--blue-light);
+  transform:translateY(-1px);
+  box-shadow:0 8px 24px rgba(58,123,213,0.3);
+}
+.modal-submit:disabled{opacity:.6;cursor:not-allowed;}
+.modal-note{
+  text-align:center;font-size:11px;
+  color:var(--text-3);margin-top:10px;line-height:1.6;
+}
+#modal-error{
+  display:none;color:#E57373;
+  font-size:12.5px;margin-top:-4px;margin-bottom:8px;
+}
+
+/* Modal success */
+.modal-success{
+  display:none;text-align:center;
+  padding:16px 0;
+  animation:mSlide .4s ease both;
+}
+.msuccess-icon{
+  width:60px;height:60px;border-radius:50%;
+  background:var(--green-bg);border:2px solid var(--green);
+  display:flex;align-items:center;justify-content:center;
+  font-size:26px;margin:0 auto 18px;
+}
+.msuccess-title{
+  font-family:'Playfair Display',serif;
+  font-size:22px;font-weight:600;margin-bottom:10px;
+}
+.msuccess-desc{font-size:14px;color:var(--text-2);line-height:1.8;}
+.msuccess-zalo{
+  margin-top:18px;
+  background:var(--navy-3);border:1px solid var(--border-blue);
+  border-radius:8px;padding:14px 18px;
+  font-size:13px;color:var(--text-2);
+}
+.msuccess-zalo strong{color:var(--text);font-size:15px;display:block;margin-top:4px;}
+
+/* ── MOBILE ── */
+@media(max-width:900px){
+  nav{padding:0 20px;}
+  .nav-links{display:none;}
+  .hero{padding:60px 20px 48px;}
+  .hero h1{font-size:36px;}
+  .stats{grid-template-columns:repeat(2,1fr);}
+  .section{padding:56px 20px;}
+  .personal-grid{grid-template-columns:1fr;}
+  .photo-grid{grid-template-columns:1fr;}
+  .business-grid{grid-template-columns:1fr;}
+  .b-packages-row{grid-template-columns:1fr;}
+  .ai-banner{padding:0 20px;}
+  .ai-banner-inner{grid-template-columns:1fr;gap:24px;}
+  .why-grid{grid-template-columns:repeat(2,1fr);}
+  .process-steps{grid-template-columns:1fr 1fr;gap:24px;}
+  .process-steps::before{display:none;}
+  footer{padding:24px 20px;flex-direction:column;align-items:flex-start;}
+  .modal-box{padding:28px 20px;}
+  .mfield-row{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<canvas id="bg"></canvas>
+
+<!-- ══════════════════════ MODAL TƯ VẤN ══════════════════════ -->
+<div class="modal-overlay" id="modal-overlay" onclick="handleOverlayClick(event)">
+  <div class="modal-box" id="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+
+    <!-- Form state -->
+    <div id="modal-form-state">
+      <div class="modal-title">Đăng ký tư vấn miễn phí</div>
+      <div class="modal-sub">Điền thông tin — đội ngũ Hanadola liên hệ bạn trong 2 giờ làm việc</div>
+
+      <div class="mfield-row">
+        <div class="mfield">
+          <label>Họ và tên <span class="req">*</span></label>
+          <input type="text" id="m-name" placeholder="Nguyễn Văn A" maxlength="60">
+        </div>
+        <div class="mfield">
+          <label>Số Zalo <span class="req">*</span></label>
+          <input type="tel" id="m-phone" placeholder="0xxx xxx xxx" maxlength="15">
+        </div>
+      </div>
+
+      <div class="mfield">
+        <label>Email <span class="req">*</span></label>
+        <input type="text" inputmode="email" id="m-email" placeholder="email@example.com">
+      </div>
+
+      <div class="mfield">
+        <label>Tên công ty / thương hiệu <span class="opt">(nếu có)</span></label>
+        <input type="text" id="m-company" placeholder="Công ty hoặc tên shop của bạn" maxlength="80">
+      </div>
+
+      <div class="mfield">
+        <label>Dịch vụ quan tâm <span class="opt">(chọn 1 hoặc nhiều)</span></label>
+        <div class="mchips" id="mchips">
+          <div class="mchip" onclick="toggleMChip(this)">📸 Bộ ảnh cá nhân AI</div>
+          <div class="mchip" onclick="toggleMChip(this)">📚 Ebook & Sách số</div>
+          <div class="mchip" onclick="toggleMChip(this)">🌟 Thương hiệu cá nhân</div>
+          <div class="mchip" onclick="toggleMChip(this)">🎬 Kênh YouTube / TikTok</div>
+          <div class="mchip" onclick="toggleMChip(this)">🎥 Video ngắn AI</div>
+          <div class="mchip" onclick="toggleMChip(this)">✍️ Viết thuê theo yêu cầu</div>
+          <div class="mchip" onclick="toggleMChip(this)">⚡ Setup kênh online DN</div>
+          <div class="mchip" onclick="toggleMChip(this)">🎨 Ảnh & Video thương hiệu</div>
+          <div class="mchip" onclick="toggleMChip(this)">💻 Landing page / Tool</div>
+          <div class="mchip" onclick="toggleMChip(this)">📊 Tư vấn chiến lược</div>
+          <div class="mchip" onclick="toggleMChip(this)">🤔 Chưa rõ — cần tư vấn</div>
+        </div>
+      </div>
+
+      <div class="mfield">
+        <label>Mô tả ngắn nhu cầu của bạn <span class="opt">(không bắt buộc)</span></label>
+        <textarea id="m-note" placeholder="Ví dụ: Tôi đang có shop Shopee muốn mở rộng sang TikTok Shop, cần setup kênh và content hàng tháng..."></textarea>
+      </div>
+
+      <div id="modal-error"></div>
+
+      <button class="modal-submit" id="modal-submit-btn" onclick="submitModal()">
+        Gửi yêu cầu tư vấn →
+      </button>
+      <div class="modal-note">🔒 Bảo mật tuyệt đối · Không spam · Không chia sẻ bên thứ ba</div>
+    </div>
+
+    <!-- Success state -->
+    <div class="modal-success" id="modal-success-state">
+      <div class="msuccess-icon">✓</div>
+      <div class="msuccess-title">Đã nhận thông tin!</div>
+      <div class="msuccess-desc">
+        Cảm ơn bạn đã liên hệ Hanadola.<br>
+        Chúng tôi sẽ nhắn Zalo cho bạn trong<br>
+        vòng <strong style="color:var(--text)">2 giờ làm việc</strong>.
+      </div>
+      <div class="msuccess-zalo">
+        Hoặc nhắn trực tiếp qua Zalo<br>
+        <strong>0935 251 866</strong>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Hanadola <span>Media & Technology</span></div>
+  <div class="nav-links">
+    <a href="#personal">Cá nhân</a>
+    <a href="#business">Doanh nghiệp</a>
+    <a href="#process">Quy trình</a>
+    <button class="nav-cta" onclick="openModal()">Tư vấn miễn phí</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">AI-Powered Digital Solutions</div>
+  <h1>Mọi thứ bạn cần<br>trong thế giới <em>số</em></h1>
+  <p class="hero-sub">Từ ảnh cá nhân đến hệ thống marketing doanh nghiệp — Hanadola làm được tất cả bằng công nghệ AI. Nhanh hơn. Rẻ hơn. Đẹp hơn.</p>
+  <div class="hero-btns">
+    <a href="#personal" class="btn-primary">Xem dịch vụ cá nhân</a>
+    <a href="#business" class="btn-outline">Dịch vụ doanh nghiệp</a>
+  </div>
+</div>
+
+<!-- STATS -->
+<div style="position:relative;z-index:1;padding:0 60px;max-width:1200px;margin:0 auto 80px;">
+  <div class="stats">
+    <div class="stat"><div class="stat-num">AI</div><div class="stat-label">100% quy trình dùng AI</div></div>
+    <div class="stat"><div class="stat-num">48h</div><div class="stat-label">Turnaround trung bình</div></div>
+    <div class="stat"><div class="stat-num">0đ</div><div class="stat-label">Phí tư vấn ban đầu</div></div>
+    <div class="stat"><div class="stat-num">∞</div><div class="stat-label">Chỉnh sửa đến khi ưng</div></div>
+  </div>
+</div>
+
+<!-- ═══════════ PERSONAL ═══════════ -->
+<div id="personal" class="section">
+  <div class="section-header">
+    <div class="section-tag tag-personal">👤 Dành cho cá nhân</div>
+    <div class="section-title">Bạn cần gì — chúng tôi làm được</div>
+    <p class="section-desc">Không cần studio, không cần đội ngũ, không cần biết kỹ thuật — chỉ cần nói cho chúng tôi biết bạn muốn gì.</p>
+  </div>
+
+  <div class="personal-grid">
+
+    <!-- BỘ ẢNH CÁ NHÂN -->
+    <div class="photo-packages">
+      <div class="p-icon">📸</div>
+      <div class="photo-title">Bộ Ảnh Cá Nhân AI Theo Phong Cách</div>
+      <p class="photo-desc">Gửi 3–5 ảnh selfie bình thường → nhận lại bộ ảnh chuyên nghiệp đúng phong cách bạn muốn. Không cần trang điểm, không cần đặt lịch, không cần ra studio.</p>
+      <div class="photo-grid">
+        <div class="pkg-box">
+          <div class="pkg-tier">Gói cơ bản</div>
+          <div class="pkg-count">20 ảnh</div>
+          <div class="pkg-style">1 phong cách · 1 bối cảnh</div>
+          <div class="pkg-price-val">299.000 đ</div>
+          <div class="pkg-delivery">Bàn giao trong 24h</div>
+          <ul class="pkg-feats">
+            <li>20 ảnh JPG độ phân giải cao</li>
+            <li>1 phong cách tuỳ chọn</li>
+            <li>Chỉnh sửa 1 lần</li>
+          </ul>
+        </div>
+        <div class="pkg-box best">
+          <div class="pkg-tier">⭐ Phổ biến nhất</div>
+          <div class="pkg-count">35 ảnh</div>
+          <div class="pkg-style">2 phong cách · 2 bối cảnh</div>
+          <div class="pkg-price-val">499.000 đ</div>
+          <div class="pkg-delivery">Bàn giao trong 24h</div>
+          <ul class="pkg-feats">
+            <li>35 ảnh JPG + PNG nền trong</li>
+            <li>2 phong cách hoàn toàn khác nhau</li>
+            <li>Chỉnh sửa 2 lần không giới hạn</li>
+            <li>Gợi ý phong cách nếu chưa biết chọn</li>
+          </ul>
+        </div>
+        <div class="pkg-box">
+          <div class="pkg-tier">Gói premium</div>
+          <div class="pkg-count">50 ảnh</div>
+          <div class="pkg-style">3 phong cách · đa bối cảnh</div>
+          <div class="pkg-price-val">799.000 đ</div>
+          <div class="pkg-delivery">Bàn giao trong 36h</div>
+          <ul class="pkg-feats">
+            <li>50 ảnh JPG + PNG + mọi tỷ lệ</li>
+            <li>3 phong cách hoàn toàn khác nhau</li>
+            <li>Chỉnh sửa không giới hạn</li>
+            <li>1 video slideshow làm kỷ niệm</li>
+          </ul>
+        </div>
+      </div>
+      <div class="styles-row">
+        <span style="font-size:12px;color:var(--text-3);">Phong cách:</span>
+        <span class="style-chip">Doanh nhân / CEO</span>
+        <span class="style-chip">Thời trang Âu / Á</span>
+        <span class="style-chip">Du lịch thế giới</span>
+        <span class="style-chip">Cổ trang / Fantasy</span>
+        <span class="style-chip">Fine art / Nghệ thuật</span>
+        <span class="style-chip">Áo dài truyền thống</span>
+        <span class="style-chip">Casual / Lifestyle</span>
+        <span style="font-size:11.5px;color:var(--gold-light);">+ theo yêu cầu riêng</span>
+      </div>
+    </div>
+
+    <!-- EBOOK SỐ -->
+    <div class="p-card featured">
+      <div class="p-card-badge badge-hot">Hot</div>
+      <span class="p-icon">📚</span>
+      <div class="p-name">Ebook & Sách Số</div>
+      <p class="p-desc">Kho ebook chuyên đề tài chính cá nhân, tư duy kinh doanh, ứng dụng AI, phát triển bản thân — tải về ngay sau khi thanh toán.</p>
+      <ul class="p-items">
+        <li>Ebook tài chính cá nhân & tự do tài chính</li>
+        <li>Ebook tư duy kinh doanh & khởi nghiệp</li>
+        <li>Ebook hướng dẫn dùng AI kiếm tiền</li>
+        <li>Ebook xây kênh TikTok / YouTube từ đầu</li>
+        <li>Prompt Pack AI tạo ảnh chuyên nghiệp</li>
+      </ul>
+      <div class="p-price">49.000 — 299.000 đ / cuốn</div>
+      <div class="p-price-note">Tải ngay · Thanh toán qua Zalo Pay / chuyển khoản</div>
+    </div>
+
+    <!-- THƯƠNG HIỆU CÁ NHÂN -->
+    <div class="p-card">
+      <div class="p-card-badge badge-new">New</div>
+      <span class="p-icon">🌟</span>
+      <div class="p-name">Xây Dựng Thương Hiệu Cá Nhân</div>
+      <p class="p-desc">Bạn muốn được biết đến là chuyên gia trong lĩnh vực của mình — chúng tôi xây toàn bộ hệ thống personal brand từ đầu.</p>
+      <ul class="p-items">
+        <li>Định vị bản thân & xác định niche</li>
+        <li>Bộ nhận diện thương hiệu cá nhân</li>
+        <li>Setup Fanpage / TikTok / LinkedIn</li>
+        <li>Kịch bản nội dung 30 ngày đầu</li>
+        <li>Chiến lược tăng trưởng follower</li>
+      </ul>
+      <div class="p-price">5.000.000 — 15.000.000 đ</div>
+      <div class="p-price-note">Trọn gói · Tư vấn 1-1 trước khi bắt đầu</div>
+    </div>
+
+    <!-- KÊNH YOUTUBE / TIKTOK -->
+    <div class="p-card">
+      <span class="p-icon">🎬</span>
+      <div class="p-name">Setup Kênh YouTube / TikTok Cá Nhân</div>
+      <p class="p-desc">Muốn có kênh nhưng không biết bắt đầu từ đâu — chúng tôi setup hoàn chỉnh và tạo 10 video đầu tiên cho bạn.</p>
+      <ul class="p-items">
+        <li>Tạo kênh + tối ưu SEO hoàn chỉnh</li>
+        <li>Bộ nhận diện kênh (logo, thumbnail, intro)</li>
+        <li>Kịch bản + sản xuất 10 video AI đầu tiên</li>
+        <li>Hướng dẫn tự vận hành sau bàn giao</li>
+      </ul>
+      <div class="p-price">8.000.000 — 18.000.000 đ</div>
+      <div class="p-price-note">Bàn giao trong 7–10 ngày</div>
+    </div>
+
+    <!-- VIDEO AI CÁ NHÂN -->
+    <div class="p-card">
+      <div class="p-card-badge badge-popular">Trending</div>
+      <span class="p-icon">🎥</span>
+      <div class="p-name">Video Ngắn AI Theo Yêu Cầu</div>
+      <p class="p-desc">Quảng cáo sản phẩm, video giới thiệu bản thân, video kỷ niệm, clip TikTok — không cần quay, không cần diễn viên.</p>
+      <ul class="p-items">
+        <li>Video 15–60s chất lượng HD</li>
+        <li>Voiceover AI tiếng Việt tự nhiên</li>
+        <li>Nhạc nền bản quyền</li>
+        <li>Caption + hiệu ứng chuyển cảnh</li>
+      </ul>
+      <div class="p-price">500.000 — 2.000.000 đ / video</div>
+      <div class="p-price-note">Bàn giao trong 24–48h</div>
+    </div>
+
+    <!-- VIẾT THUÊ -->
+    <div class="p-card">
+      <span class="p-icon">✍️</span>
+      <div class="p-name">Viết Thuê Theo Đơn Đặt Hàng</div>
+      <p class="p-desc">Cần bài viết, CV, kế hoạch kinh doanh, proposal, hay bất cứ nội dung dạng văn bản nào — inbox là có.</p>
+      <ul class="p-items">
+        <li>CV / Hồ sơ xin việc chuyên nghiệp</li>
+        <li>Kế hoạch kinh doanh / Business Plan</li>
+        <li>Bài đăng blog / SEO content</li>
+        <li>Proposal / Báo giá dịch vụ</li>
+        <li>Script video / Kịch bản quảng cáo</li>
+      </ul>
+      <div class="p-price">200.000 — 2.000.000 đ / bài</div>
+      <div class="p-price-note">Tùy độ dài & phức tạp · Báo giá trong 30 phút</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider" style="margin:0 60px;"></div>
+
+<!-- ═══════════ BUSINESS ═══════════ -->
+<div id="business" class="section">
+  <div class="section-header">
+    <div class="section-tag tag-business">🏢 Dành cho doanh nghiệp</div>
+    <div class="section-title">Từ setup đến vận hành — một đối tác duy nhất</div>
+    <p class="section-desc">SME, startup, shop online — chúng tôi xây hệ thống marketing số hoàn chỉnh để bạn tập trung vào kinh doanh cốt lõi.</p>
+  </div>
+
+  <div class="business-grid">
+
+    <div class="b-card">
+      <div class="b-num">01</div>
+      <span class="b-icon">⚡</span>
+      <div class="b-name">Setup Kênh Online Trọn Gói</div>
+      <p class="b-desc">Xây dựng hệ thống hiện diện số từ đầu — Fanpage, YouTube, TikTok, Zalo OA — đồng bộ nhận diện, sẵn sàng bán hàng.</p>
+      <ul class="b-includes">
+        <li>Thiết lập & tối ưu hoàn toàn tất cả kênh</li>
+        <li>Bộ nhận diện thương hiệu đồng bộ</li>
+        <li>10 bài/video content đầu tiên</li>
+        <li>Cài đặt auto-reply, chatbot cơ bản</li>
+        <li>Hỗ trợ 30 ngày sau bàn giao</li>
+      </ul>
+      <div class="b-price">8.000.000 — 20.000.000 đ</div>
+      <div class="b-price-note">Bàn giao trong 5–7 ngày làm việc</div>
+    </div>
+
+    <div class="b-card">
+      <div class="b-num">02</div>
+      <span class="b-icon">✍️</span>
+      <div class="b-name">Quản Lý Content & Fanpage Hàng Tháng</div>
+      <p class="b-desc">Đăng bài đều đặn, đúng giờ vàng, đúng tệp khách hàng. Bạn tập trung kinh doanh — chúng tôi lo toàn bộ nội dung.</p>
+      <ul class="b-includes">
+        <li>20–30 bài viết/tháng theo lịch content</li>
+        <li>Thiết kế hình ảnh đồng bộ thương hiệu</li>
+        <li>Trả lời comment & inbox cơ bản</li>
+        <li>Báo cáo hiệu quả cuối tháng</li>
+      </ul>
+      <div class="b-price">8.000.000 — 20.000.000 đ / tháng</div>
+      <div class="b-price-note">Hợp đồng tối thiểu 1 tháng · Gia hạn tự động</div>
+    </div>
+
+    <div class="b-card">
+      <div class="b-num">03</div>
+      <span class="b-icon">🎨</span>
+      <div class="b-name">Sản Xuất Ảnh & Video AI Thương Hiệu</div>
+      <p class="b-desc">Ảnh sản phẩm, video quảng cáo, thumbnail — chất lượng studio, chi phí thấp hơn 70% so với sản xuất truyền thống.</p>
+      <ul class="b-includes">
+        <li>Ảnh sản phẩm / nhận diện thương hiệu</li>
+        <li>Video quảng cáo 15–60s cho TikTok & Reels</li>
+        <li>Thumbnail YouTube / Cover Fanpage</li>
+        <li>File gốc độ phân giải cao · chỉnh đến khi ưng</li>
+      </ul>
+      <div class="b-price">3.000.000 — 15.000.000 đ / project</div>
+      <div class="b-price-note">Turnaround 24–48h</div>
+    </div>
+
+    <div class="b-card">
+      <div class="b-num">04</div>
+      <span class="b-icon">📖</span>
+      <div class="b-name">Viết Ebook & Tài Liệu Đào Tạo</div>
+      <p class="b-desc">Biến kiến thức chuyên môn thành sản phẩm số bán được hoặc tài liệu đào tạo nội bộ chuyên nghiệp.</p>
+      <ul class="b-includes">
+        <li>Nghiên cứu & lên outline nội dung</li>
+        <li>Viết đầy đủ 30–200 trang</li>
+        <li>Thiết kế layout PDF chuyên nghiệp</li>
+        <li>File PDF + nguồn chỉnh sửa bàn giao</li>
+      </ul>
+      <div class="b-price">15.000.000 — 50.000.000 đ</div>
+      <div class="b-price-note">Thanh toán theo milestone · 10–21 ngày</div>
+    </div>
+
+    <div class="b-card">
+      <div class="b-num">05</div>
+      <span class="b-icon">💻</span>
+      <div class="b-name">Landing Page & Tool Tự Động Hóa</div>
+      <p class="b-desc">Trang bán hàng chuyển đổi cao, chatbot tư vấn tự động, form thu thập lead, dashboard quản lý — tất cả tích hợp AI.</p>
+      <ul class="b-includes">
+        <li>Landing page chuyển đổi cao (HTML/React)</li>
+        <li>Chatbot tư vấn tự động cho Fanpage/web</li>
+        <li>Form thu thập data → Google Sheet tự động</li>
+        <li>Tích hợp Zalo / email notification</li>
+      </ul>
+      <div class="b-price">10.000.000 — 35.000.000 đ</div>
+      <div class="b-price-note">Bàn giao trong 7–14 ngày</div>
+    </div>
+
+    <div class="b-card">
+      <div class="b-num">06</div>
+      <span class="b-icon">📊</span>
+      <div class="b-name">Tư Vấn Chiến Lược Digital Marketing</div>
+      <p class="b-desc">Chẩn đoán toàn bộ hệ thống marketing, xác định điểm thất thoát và đưa ra lộ trình tăng trưởng 90 ngày cụ thể.</p>
+      <ul class="b-includes">
+        <li>Audit toàn bộ kênh online hiện tại</li>
+        <li>Phân tích đối thủ & cơ hội thị trường</li>
+        <li>Lộ trình 90 ngày chi tiết có thể thực hiện ngay</li>
+        <li>1 buổi follow-up sau 30 ngày</li>
+      </ul>
+      <div class="b-price">5.000.000 — 15.000.000 đ</div>
+      <div class="b-price-note">Báo cáo trong 3–5 ngày làm việc</div>
+    </div>
+
+    <!-- GÓI THÁNG -->
+    <div class="b-packages-row">
+      <div class="b-pkg">
+        <div class="b-pkg-tier">Gói khởi động</div>
+        <div class="b-pkg-name">Starter</div>
+        <div class="b-pkg-target">Cá nhân & shop online mới bắt đầu xây dựng thương hiệu</div>
+        <div class="b-pkg-price">10.000.000 đ</div>
+        <div class="b-pkg-period">/ tháng</div>
+        <ul class="b-pkg-list">
+          <li>Setup 1 Fanpage hoàn chỉnh</li>
+          <li>15 bài content / tháng</li>
+          <li>5 ảnh thiết kế / tuần</li>
+          <li>Báo cáo hàng tháng</li>
+          <li>Hỗ trợ Zalo giờ hành chính</li>
+        </ul>
+      </div>
+      <div class="b-pkg best">
+        <div class="b-pkg-tier">⭐ Gói tăng tốc</div>
+        <div class="b-pkg-name">Growth</div>
+        <div class="b-pkg-target">SME muốn tăng tốc nhận diện và bắt đầu chốt đơn từ online</div>
+        <div class="b-pkg-price">22.000.000 đ</div>
+        <div class="b-pkg-period">/ tháng</div>
+        <ul class="b-pkg-list">
+          <li>Setup & quản lý 2 kênh (Fanpage + TikTok)</li>
+          <li>30 bài content đa nền tảng</li>
+          <li>4 video ngắn AI / tháng</li>
+          <li>Chatbot tự động cơ bản</li>
+          <li>Tư vấn chiến lược 1 buổi / tháng</li>
+          <li>Báo cáo hàng tuần + hỗ trợ ưu tiên</li>
+        </ul>
+      </div>
+      <div class="b-pkg">
+        <div class="b-pkg-tier">Gói toàn diện</div>
+        <div class="b-pkg-name">Scale</div>
+        <div class="b-pkg-target">Doanh nghiệp muốn xây hệ thống marketing số hoàn chỉnh</div>
+        <div class="b-pkg-price">45.000.000 đ</div>
+        <div class="b-pkg-period">/ tháng</div>
+        <ul class="b-pkg-list">
+          <li>Quản lý toàn bộ 4 kênh</li>
+          <li>60 bài content + lịch tự động</li>
+          <li>8 video AI + 2 video có kịch bản</li>
+          <li>Landing page + chatbot nâng cao</li>
+          <li>Tư vấn chiến lược không giới hạn</li>
+          <li>Account Manager riêng · hỗ trợ 24/7</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- AI BANNER -->
+<div class="ai-banner" style="margin-bottom:80px;">
+  <div class="ai-banner-inner">
+    <div>
+      <div class="ai-title">Thế mạnh của chúng tôi:<br><em>AI làm được mọi thứ</em></div>
+      <p class="ai-desc">Không cần studio ảnh, không cần đội quay phim, không cần agency đắt tiền — Hanadola ứng dụng AI vào 100% quy trình sản xuất để bàn giao nhanh hơn, chi phí tối ưu hơn, chất lượng không kém bất kỳ ai.</p>
+      <div class="ai-tags">
+        <span class="ai-tag">Midjourney</span>
+        <span class="ai-tag">Runway / Veo3</span>
+        <span class="ai-tag">HeyGen Avatar</span>
+        <span class="ai-tag">Claude AI</span>
+        <span class="ai-tag">FPT Voiceover</span>
+        <span class="ai-tag">Ideogram</span>
+        <span class="ai-tag">Canva Pro</span>
+      </div>
+    </div>
+    <div class="ai-cta-block">
+      <a href="https://zalo.me/0935251866" class="ai-cta-zalo" target="_blank">💬 Nhắn Zalo ngay</a>
+      <div class="ai-zalo-note">Hoặc gọi / nhắn trực tiếp</div>
+      <div class="ai-zalo-num">0935 251 866</div>
+      <div class="ai-zalo-note">Thứ 2–7 · 8:00–18:00</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY -->
+<div class="section" style="padding-top:0;">
+  <div class="section-header">
+    <div class="section-title">Tại sao chọn Hanadola</div>
+  </div>
+  <div class="why-grid">
+    <div class="why-item">
+      <div class="why-num">AI</div>
+      <div class="why-label">Ứng dụng AI thực chiến</div>
+      <p class="why-desc">Mọi quy trình đều được tối ưu bằng AI — tiết kiệm chi phí, tăng tốc độ, giữ chất lượng ổn định.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-num">48h</div>
+      <div class="why-label">Turnaround nhanh nhất</div>
+      <p class="why-desc">Phần lớn dự án bàn giao trong 48–72 giờ. Bạn cần nhanh — chúng tôi deliver nhanh.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-num">0đ</div>
+      <div class="why-label">Không phí ẩn</div>
+      <p class="why-desc">Báo giá rõ ràng từ đầu. Chỉnh sửa đến khi hài lòng trong phạm vi đã thỏa thuận.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-num">VN</div>
+      <div class="why-label">Hiểu thị trường Việt</div>
+      <p class="why-desc">Nội dung viết bởi người Việt, cho người Việt. Không dịch máy, không template nước ngoài.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PROCESS -->
+<div id="process" class="section" style="padding-top:0;">
+  <div class="section-header">
+    <div class="section-title">Quy trình làm việc</div>
+    <p class="section-desc">Đơn giản, minh bạch — bạn biết chính xác điều gì đang xảy ra ở mỗi bước.</p>
+  </div>
+  <div class="process-steps">
+    <div class="step">
+      <div class="step-circle">💬</div>
+      <div class="step-num-label">Bước 01</div>
+      <div class="step-title">Tư vấn miễn phí</div>
+      <p class="step-desc">Inbox Zalo hoặc điền form — chúng tôi phản hồi trong 2 giờ, tư vấn 30 phút không mất phí.</p>
+    </div>
+    <div class="step">
+      <div class="step-circle">📋</div>
+      <div class="step-num-label">Bước 02</div>
+      <div class="step-title">Báo giá & xác nhận</div>
+      <p class="step-desc">Gửi báo giá rõ ràng, timeline cụ thể. Xác nhận và đặt cọc 50% để bắt đầu.</p>
+    </div>
+    <div class="step">
+      <div class="step-circle">⚡</div>
+      <div class="step-num-label">Bước 03</div>
+      <div class="step-title">Thực hiện & review</div>
+      <p class="step-desc">Sản xuất theo yêu cầu, gửi bản xem trước, chỉnh sửa đến khi bạn hài lòng 100%.</p>
+    </div>
+    <div class="step">
+      <div class="step-circle">🎁</div>
+      <div class="step-num-label">Bước 04</div>
+      <div class="step-title">Bàn giao & hỗ trợ</div>
+      <p class="step-desc">Bàn giao file gốc, hỗ trợ hướng dẫn sử dụng. Thanh toán 50% còn lại sau khi ưng ý.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FINAL CTA -->
+<div class="final-cta">
+  <h2>Sẵn sàng bắt đầu <em>chưa?</em></h2>
+  <p>Tư vấn miễn phí 30 phút — không cam kết, không áp lực. Chúng tôi sẽ nói thẳng bạn cần gì và không cần gì.</p>
+  <div class="final-btns">
+    <button class="btn-primary" onclick="openModal()">📋 Đăng ký tư vấn ngay</button>
+    <a href="https://zalo.me/0935251866" class="btn-outline" target="_blank">💬 Nhắn Zalo ngay</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <strong style="color:var(--text-2);font-size:14px;">Hanadola Media & Technology</strong><br>
+    P903, Tầng 9, Diamond Plaza, Lê Duẩn, Phường Sài Gòn, TP.HCM
+  </div>
+  <div style="text-align:right;">
+    <a href="mailto:admin@hanadola.com">admin@hanadola.com</a><br>
+    Zalo: <a href="https://zalo.me/0935251866">0935 251 866</a><br>
+    © 2026 Hanadola. All rights reserved.
+  </div>
+</footer>
+
+<script>
+/* ── NODE CANVAS ── */
+const c = document.getElementById('bg');
+const cx = c.getContext('2d');
+let pts = [];
+function rsz(){ c.width=window.innerWidth; c.height=window.innerHeight; }
+function init(){
+  pts=[];
+  const n=Math.floor(c.width*c.height/16000);
+  for(let i=0;i<n;i++) pts.push({
+    x:Math.random()*c.width, y:Math.random()*c.height,
+    vx:(Math.random()-.5)*.25, vy:(Math.random()-.5)*.25,
+    r:Math.random()*1.5+.5
+  });
+}
+function draw(){
+  cx.clearRect(0,0,c.width,c.height);
+  pts.forEach(p=>{
+    p.x+=p.vx; p.y+=p.vy;
+    if(p.x<0||p.x>c.width) p.vx*=-1;
+    if(p.y<0||p.y>c.height) p.vy*=-1;
+    cx.beginPath(); cx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    cx.fillStyle='rgba(100,180,255,.8)'; cx.fill();
+  });
+  for(let i=0;i<pts.length;i++){
+    for(let j=i+1;j<pts.length;j++){
+      const dx=pts[i].x-pts[j].x, dy=pts[i].y-pts[j].y;
+      const d=Math.sqrt(dx*dx+dy*dy);
+      if(d<130){
+        cx.beginPath(); cx.moveTo(pts[i].x,pts[i].y); cx.lineTo(pts[j].x,pts[j].y);
+        cx.strokeStyle=`rgba(58,123,213,${(1-d/130)*.35})`; cx.lineWidth=.5; cx.stroke();
+      }
+    }
+  }
+  requestAnimationFrame(draw);
+}
+rsz(); init(); draw();
+window.addEventListener('resize',()=>{ rsz(); init(); });
+
+/* ── SCROLL FADE IN ── */
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.style.opacity='1';
+      e.target.style.transform='translateY(0)';
+    }
+  });
+},{threshold:.08});
+document.querySelectorAll('.p-card,.b-card,.b-pkg,.why-item,.step,.photo-packages').forEach(el=>{
+  el.style.opacity='0';
+  el.style.transform='translateY(20px)';
+  el.style.transition='opacity .5s ease, transform .5s ease';
+  observer.observe(el);
+});
+
+/* ── MODAL ── */
+function openModal(){
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  document.getElementById('modal-overlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+function handleOverlayClick(e){
+  if(e.target === document.getElementById('modal-overlay')) closeModal();
+}
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
+
+function toggleMChip(el){ el.classList.toggle('active'); }
+
+async function submitModal(){
+  const name    = document.getElementById('m-name').value.trim();
+  const phone   = document.getElementById('m-phone').value.trim();
+  const email   = document.getElementById('m-email').value.trim();
+  const company = document.getElementById('m-company').value.trim();
+  const note    = document.getElementById('m-note').value.trim();
+  const services = [...document.querySelectorAll('.mchip.active')].map(c=>c.textContent.trim());
+  const errEl   = document.getElementById('modal-error');
+  const btn     = document.getElementById('modal-submit-btn');
+
+  errEl.style.display='none'; errEl.textContent='';
+
+  if(!name){
+    errEl.textContent='⚠ Vui lòng nhập họ và tên.';
+    errEl.style.display='block';
+    document.getElementById('m-name').focus(); return;
+  }
+  if(!phone || phone.replace(/\D/g,'').length < 9){
+    errEl.textContent='⚠ Vui lòng nhập số Zalo hợp lệ.';
+    errEl.style.display='block';
+    document.getElementById('m-phone').focus(); return;
+  }
+  if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+    errEl.textContent='⚠ Vui lòng nhập địa chỉ email hợp lệ.';
+    errEl.style.display='block';
+    document.getElementById('m-email').focus(); return;
+  }
+
+  btn.disabled=true; btn.textContent='Đang gửi...';
+
+  try {
+    const res = await fetch('/api/submit-contact',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ name, phone, email, company, services, note }),
+    });
+    const data = await res.json();
+    if(!res.ok || !data.success) throw new Error(data.error || 'Gửi thất bại');
+
+    document.getElementById('modal-form-state').style.display='none';
+    document.getElementById('modal-success-state').style.display='block';
+
+  } catch(err){
+    errEl.textContent='⚠ Có lỗi xảy ra. Vui lòng thử lại hoặc nhắn Zalo 0935 251 866.';
+    errEl.style.display='block';
+    btn.disabled=false; btn.textContent='Gửi yêu cầu tư vấn →';
+  }
+}
+</script>
+</body>
+</html>
